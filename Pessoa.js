@@ -10,8 +10,8 @@ class Pessoa {
     }
 
     set nome(nome) {
-        if (!nome || nome.trim() === "") {
-            throw new Error("O nome não pode ser vazio.")
+        if (typeof nome !== "string" || nome.trim() === "") {
+            throw new Error("O nome da pessoa é obrigatório.")
         }
 
         this.#nome = nome.trim()
